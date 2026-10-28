@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Report Cybercrime in India</title>
+<style>
+:root{--bg:#f4f1ea;--card:#ffffff;--ink:#0f1b2d;--mute:#5b6472;--line:#ddd6c8;--accent:#0f766e;--btn:#0f766e;--btnink:#ffffff;--warn:#b45309;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b2d;--card:#16263f;--ink:#f4f1ea;--mute:#a9b7ca;--line:#2b3f5e;--accent:#5eead4;--btn:#5eead4;--btnink:#0f1b2d;--warn:#fbbf24}}
+:root[data-theme="dark"]{--bg:#0f1b2d;--card:#16263f;--ink:#f4f1ea;--mute:#a9b7ca;--line:#2b3f5e;--accent:#5eead4;--btn:#5eead4;--btnink:#0f1b2d;--warn:#fbbf24}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Nirmala UI","Noto Sans Kannada","Noto Sans",Helvetica,sans-serif;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding:24px 16px 56px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+select{padding:10px 12px;font-size:16px;border:2px solid var(--accent);border-radius:10px;background:var(--card);color:var(--ink)}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.15;margin:8px 0 12px}
+h2{font-size:24px;margin:36px 0 12px}
+p{margin:0 0 12px}
+.mute{color:var(--mute)}
+.eyebrow{font-weight:700;letter-spacing:2px;font-size:13px;color:var(--warn)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card h3{margin:0 0 6px;font-size:18px}
+.btn{display:inline-block;background:var(--btn);color:var(--btnink);text-decoration:none;font-weight:700;padding:10px 14px;border-radius:10px;margin:4px 6px 0 0;font-size:15px}
+.btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent);padding:8px 12px}
+.big{display:block;font-size:30px;font-weight:700;color:var(--accent);text-decoration:none}
+input{width:100%;padding:14px;font-size:16px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 12px;border-radius:999px;font-size:14px;cursor:pointer}
+.chip.on{background:var(--btn);color:var(--btnink);border-color:var(--btn)}
+.num{font-size:13px;color:var(--mute);font-weight:700}
+ol{padding-left:22px}
+li{margin-bottom:6px}
+.note{border-left:4px solid var(--warn);padding:8px 12px;background:var(--card);border-radius:8px}
+footer{margin-top:40px;font-size:13px;color:var(--mute)}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><div class="eyebrow" data-k="ey"></div>
+<select id="lang" aria-label="Language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="kn">ಕನ್ನಡ</option></select></div>
+<h1 data-k="h1"></h1>
+<p class="mute" data-k="sub"></p>
+
+<div class="grid">
+<div class="card"><a class="big" href="tel:1930" target="_blank" rel="noopener">1930</a><h3 data-k="t1"></h3><p class="mute" data-k="d1"></p><a class="btn" href="tel:1930" target="_blank" rel="noopener"><span class="cl"></span> 1930</a></div>
+<div class="card"><a class="big" href="tel:112" target="_blank" rel="noopener">112</a><h3 data-k="t2"></h3><p class="mute" data-k="d2"></p><a class="btn" href="tel:112" target="_blank" rel="noopener"><span class="cl"></span> 112</a></div>
+<div class="card"><a class="big" href="tel:181" target="_blank" rel="noopener">181</a><h3 data-k="t3"></h3><p class="mute" data-k="d3"></p><a class="btn" href="tel:181" target="_blank" rel="noopener"><span class="cl"></span> 181</a></div>
+<div class="card"><h3 data-k="pt"></h3><p class="mute" data-k="pd"></p><a class="btn" href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">cybercrime.gov.in</a></div>
+</div>
+
+<h2 data-k="fh"></h2>
+<input id="q" type="search" data-p="ph" aria-label="Search">
+<div class="chips" id="chips">
+<button class="chip on" data-f="all" data-k="al"></button>
+<button class="chip" data-f="money" data-k="mo"></button>
+<button class="chip" data-f="threat" data-k="th"></button>
+<button class="chip" data-f="tech" data-k="te"></button>
+</div>
+<p class="mute" id="count"></p>
+<div class="grid" id="list"></div>
+
+<h2 data-k="hh"></h2>
+<ol><li data-k="s1"></li><li data-k="s2"></li><li data-k="s3"></li><li data-k="s4"></li></ol>
+<div class="note"><b data-k="nb"></b> <span data-k="nt"></span> <a href="tel:1930" target="_blank" rel="noopener">1930</a></div>
+
+<h2>CERT-In</h2>
+<p class="mute" data-k="cd"></p>
+<a class="btn alt" href="https://www.cert-in.org.in/" target="_blank" rel="noopener noreferrer">cert-in.org.in</a>
+<footer data-k="ft"></footer>
+</div>
+<script>
+var P="https://cybercrime.gov.in/";
+var D=[["money",1],["tech",5],["tech",8],["money",0],["money",2],["threat",5],["threat",6],["tech",7],["tech",8],["tech",8],["tech",7],["tech",9],["money",4],["money",2],["tech",0],["money",3],["money",3],["tech",8],["money",3],["threat",5]];
+var PH={1:"1930",2:"1930",3:"1930",4:"1930",5:"112"};
+var L={
+en:{ey:"CYBERSECURITY HELP · INDIA",h1:"Report a Cybercrime: Where to Go and Who to Call",sub:"Find your type of cybercrime, then tap the official portal or the phone number.",
+t1:"Financial cyber fraud",d1:"Money stolen or unauthorised transactions. Call as soon as possible.",t2:"Police emergency",d2:"Immediate threats to safety.",t3:"Women’s helpline",d3:"For women who need assistance.",
+pt:"Official portal",pd:"National Cyber Crime Reporting Portal, Ministry of Home Affairs.",fh:"Find your cybercrime type",ph:"Search: phishing, SIM swap, ransomware…",
+al:"All",mo:"Money involved",th:"Threats",te:"Technical",sh:"{n} of 20 shown",no:"No match. Try another word.",rp:"Report on portal",cl:"Call",hh:"How to report online",
+s1:"Open cybercrime.gov.in and tap Register a Complaint.",s2:"Choose the type: financial fraud, women/children-related crime, or other cybercrime.",s3:"Register, fill in the details and upload evidence such as screenshots, transaction details, emails or website addresses.",s4:"Submit and save the acknowledgement number to track your complaint.",
+nb:"Financial fraud?",nt:"Call immediately, then contact your bank. Keep the transaction ID, amount, date and evidence ready.",
+cd:"The Indian Computer Emergency Response Team handles cybersecurity incident reporting, advisories and response, mainly for organisations and technical teams.",
+ft:"This guide shows the right reporting route, not a separate helpline for every offence. Always confirm details on the official government sites.",
+n:["Phishing attacks","Hacking or unauthorised account access","Ransomware attacks","Identity theft","Online financial fraud","Cyberbullying","Cyberstalking","Password attacks","Malware attacks","DDoS attacks","SQL injection attacks on a website","Website defacement","SIM-swap fraud","Credit/debit card fraud","Email spoofing","Social engineering scams","Cryptocurrency fraud","Data breaches","Online job scams","Sextortion and online blackmail"],
+a:["Report online.","Call 1930 if money is stolen; otherwise report online.","Call 1930 immediately and contact your bank or payment provider.","Call 1930 if money has been lost or transferred; also report online.","Call 1930 if money is stolen, and contact your mobile operator at once.","Report online. Call 112 in an emergency or immediate threat.","Report online or to the local police.","Report unauthorised access or resulting fraud.","Report online or to police. CERT-In can help with technical incidents.","Report online. The site owner should also tell their hosting provider."]},
+hi:{ey:"साइबर सुरक्षा सहायता · भारत",h1:"साइबर अपराध की रिपोर्ट करें: कहां जाएं और किसे कॉल करें",sub:"अपने साइबर अपराध का प्रकार चुनें, फिर आधिकारिक पोर्टल या फोन नंबर पर टैप करें।",
+t1:"वित्तीय साइबर धोखाधड़ी",d1:"पैसे चोरी हुए या अनधिकृत लेनदेन हुआ। जल्द से जल्द कॉल करें।",t2:"पुलिस आपातकाल",d2:"सुरक्षा पर तत्काल खतरा।",t3:"महिला हेल्पलाइन",d3:"सहायता चाहने वाली महिलाओं के लिए।",
+pt:"आधिकारिक पोर्टल",pd:"राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल, गृह मंत्रालय।",fh:"अपने साइबर अपराध का प्रकार खोजें",ph:"खोजें: फिशिंग, सिम स्वैप, रैनसमवेयर…",
+al:"सभी",mo:"पैसों से जुड़े",th:"धमकी",te:"तकनीकी",sh:"20 में से {n} दिख रहे हैं",no:"कोई परिणाम नहीं। दूसरा शब्द आज़माएं।",rp:"पोर्टल पर रिपोर्ट करें",cl:"कॉल करें",hh:"ऑनलाइन रिपोर्ट कैसे करें",
+s1:"cybercrime.gov.in खोलें और Register a Complaint पर टैप करें।",s2:"प्रकार चुनें: वित्तीय धोखाधड़ी, महिला/बच्चों से जुड़ा अपराध, या अन्य साइबर अपराध।",s3:"रजिस्टर करें, विवरण भरें और स्क्रीनशॉट, लेनदेन विवरण, ईमेल या वेबसाइट पते जैसे सबूत अपलोड करें।",s4:"जमा करें और शिकायत ट्रैक करने के लिए acknowledgement नंबर सहेजें।",
+nb:"वित्तीय धोखाधड़ी?",nt:"तुरंत कॉल करें, फिर अपने बैंक से संपर्क करें। ट्रांज़ैक्शन ID, राशि, तारीख और सबूत तैयार रखें।",
+cd:"भारतीय कंप्यूटर आपातकालीन प्रतिक्रिया दल साइबर सुरक्षा घटनाओं की रिपोर्टिंग, एडवाइजरी और प्रतिक्रिया संभालता है, मुख्यतः संगठनों और तकनीकी टीमों के लिए।",
+ft:"यह गाइड सही रिपोर्टिंग मार्ग बताती है, हर अपराध के लिए अलग हेल्पलाइन नहीं। विवरण हमेशा सरकारी वेबसाइटों पर जांचें।",
+n:["फिशिंग हमले","हैकिंग या अनधिकृत अकाउंट एक्सेस","रैनसमवेयर हमले","पहचान की चोरी","ऑनलाइन वित्तीय धोखाधड़ी","साइबरबुलिंग","साइबरस्टॉकिंग","पासवर्ड हमले","मैलवेयर हमले","DDoS हमले","वेबसाइट पर SQL इंजेक्शन हमले","वेबसाइट डिफेसमेंट","सिम-स्वैप धोखाधड़ी","क्रेडिट/डेबिट कार्ड धोखाधड़ी","ईमेल स्पूफिंग","सोशल इंजीनियरिंग ठगी","क्रिप्टोकरेंसी धोखाधड़ी","डेटा ब्रीच","ऑनलाइन नौकरी ठगी","सेक्सटॉर्शन और ऑनलाइन ब्लैकमेल"],
+a:["ऑनलाइन रिपोर्ट करें।","पैसे चोरी हुए हों तो 1930 पर कॉल करें; नहीं तो ऑनलाइन रिपोर्ट करें।","तुरंत 1930 पर कॉल करें और अपने बैंक या पेमेंट प्रदाता से संपर्क करें।","पैसे गंवाए या ट्रांसफर हुए हों तो 1930 पर कॉल करें, और ऑनलाइन भी रिपोर्ट करें।","पैसे चोरी हुए हों तो 1930 पर कॉल करें और तुरंत अपने मोबाइल ऑपरेटर से संपर्क करें।","ऑनलाइन रिपोर्ट करें। आपात स्थिति या तत्काल खतरे में 112 पर कॉल करें।","ऑनलाइन या स्थानीय पुलिस को रिपोर्ट करें।","अनधिकृत एक्सेस या उससे हुई धोखाधड़ी की रिपोर्ट करें।","ऑनलाइन या पुलिस को रिपोर्ट करें। तकनीकी घटनाओं में CERT-In मदद कर सकता है।","ऑनलाइन रिपोर्ट करें। साइट मालिक अपने होस्टिंग प्रदाता को भी बताएं।"]},
+kn:{ey:"ಸೈಬರ್ ಸುರಕ್ಷತಾ ಸಹಾಯ · ಭಾರತ",h1:"ಸೈಬರ್ ಅಪರಾಧವನ್ನು ವರದಿ ಮಾಡಿ: ಎಲ್ಲಿಗೆ ಹೋಗಬೇಕು, ಯಾರಿಗೆ ಕರೆ ಮಾಡಬೇಕು",sub:"ನಿಮ್ಮ ಸೈಬರ್ ಅಪರಾಧದ ಪ್ರಕಾರವನ್ನು ಆರಿಸಿ, ನಂತರ ಅಧಿಕೃತ ಪೋರ್ಟಲ್ ಅಥವಾ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ಒತ್ತಿ.",
+t1:"ಹಣಕಾಸು ಸೈಬರ್ ವಂಚನೆ",d1:"ಹಣ ಕಳವಾಗಿದೆ ಅಥವಾ ಅನಧಿಕೃತ ವಹಿವಾಟು ನಡೆದಿದೆ. ಆದಷ್ಟು ಬೇಗ ಕರೆ ಮಾಡಿ.",t2:"ಪೊಲೀಸ್ ತುರ್ತು ಸೇವೆ",d2:"ಸುರಕ್ಷತೆಗೆ ತಕ್ಷಣದ ಅಪಾಯ.",t3:"ಮಹಿಳಾ ಸಹಾಯವಾಣಿ",d3:"ಸಹಾಯ ಬೇಕಾದ ಮಹಿಳೆಯರಿಗಾಗಿ.",
+pt:"ಅಧಿಕೃತ ಪೋರ್ಟಲ್",pd:"ರಾಷ್ಟ್ರೀಯ ಸೈಬರ್ ಅಪರಾಧ ವರದಿ ಪೋರ್ಟಲ್, ಗೃಹ ಸಚಿವಾಲಯ.",fh:"ನಿಮ್ಮ ಸೈಬರ್ ಅಪರಾಧದ ಪ್ರಕಾರವನ್ನು ಹುಡುಕಿ",ph:"ಹುಡುಕಿ: ಫಿಶಿಂಗ್, ಸಿಮ್ ಸ್ವಾಪ್, ರ್ಯಾನ್ಸಮ್‌ವೇರ್…",
+al:"ಎಲ್ಲಾ",mo:"ಹಣಕ್ಕೆ ಸಂಬಂಧಿಸಿದ",th:"ಬೆದರಿಕೆಗಳು",te:"ತಾಂತ್ರಿಕ",sh:"20 ರಲ್ಲಿ {n} ತೋರಿಸಲಾಗಿದೆ",no:"ಯಾವುದೂ ಸಿಗಲಿಲ್ಲ. ಬೇರೆ ಪದ ಪ್ರಯತ್ನಿಸಿ.",rp:"ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ವರದಿ ಮಾಡಿ",cl:"ಕರೆ ಮಾಡಿ",hh:"ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಹೇಗೆ ವರದಿ ಮಾಡುವುದು",
+s1:"cybercrime.gov.in ತೆರೆದು Register a Complaint ಒತ್ತಿ.",s2:"ಪ್ರಕಾರವನ್ನು ಆರಿಸಿ: ಹಣಕಾಸು ವಂಚನೆ, ಮಹಿಳೆಯರು/ಮಕ್ಕಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಅಪರಾಧ, ಅಥವಾ ಇತರ ಸೈಬರ್ ಅಪರಾಧ.",s3:"ನೋಂದಣಿ ಮಾಡಿ, ವಿವರಗಳನ್ನು ತುಂಬಿ, ಸ್ಕ್ರೀನ್‌ಶಾಟ್, ವಹಿವಾಟು ವಿವರಗಳು, ಇಮೇಲ್ ಅಥವಾ ವೆಬ್‌ಸೈಟ್ ವಿಳಾಸಗಳಂತಹ ಪುರಾವೆಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.",s4:"ಸಲ್ಲಿಸಿ ಮತ್ತು ದೂರನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಲು acknowledgement ಸಂಖ್ಯೆಯನ್ನು ಉಳಿಸಿ.",
+nb:"ಹಣಕಾಸು ವಂಚನೆಯೇ?",nt:"ತಕ್ಷಣ ಕರೆ ಮಾಡಿ, ನಂತರ ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿ. ವಹಿವಾಟು ID, ಮೊತ್ತ, ದಿನಾಂಕ ಮತ್ತು ಪುರಾವೆಗಳನ್ನು ಸಿದ್ಧವಾಗಿಡಿ.",
+cd:"ಭಾರತೀಯ ಕಂಪ್ಯೂಟರ್ ತುರ್ತು ಪ್ರತಿಕ್ರಿಯೆ ತಂಡವು ಸೈಬರ್ ಭದ್ರತಾ ಘಟನೆಗಳ ವರದಿ, ಸಲಹೆಗಳು ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ನೋಡಿಕೊಳ್ಳುತ್ತದೆ, ಮುಖ್ಯವಾಗಿ ಸಂಸ್ಥೆಗಳು ಮತ್ತು ತಾಂತ್ರಿಕ ತಂಡಗಳಿಗಾಗಿ.",
+ft:"ಈ ಮಾರ್ಗದರ್ಶಿ ಸರಿಯಾದ ವರದಿ ಮಾರ್ಗವನ್ನು ತೋರಿಸುತ್ತದೆ, ಪ್ರತಿ ಅಪರಾಧಕ್ಕೂ ಪ್ರತ್ಯೇಕ ಸಹಾಯವಾಣಿಯಲ್ಲ. ವಿವರಗಳನ್ನು ಯಾವಾಗಲೂ ಅಧಿಕೃತ ಸರ್ಕಾರಿ ಸೈಟ್‌ಗಳಲ್ಲಿ ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.",
+n:["ಫಿಶಿಂಗ್ ದಾಳಿಗಳು","ಹ್ಯಾಕಿಂಗ್ ಅಥವಾ ಅನಧಿಕೃತ ಖಾತೆ ಪ್ರವೇಶ","ರ್ಯಾನ್ಸಮ್‌ವೇರ್ ದಾಳಿಗಳು","ಗುರುತಿನ ಕಳವು","ಆನ್‌ಲೈನ್ ಹಣಕಾಸು ವಂಚನೆ","ಸೈಬರ್ ಬುಲ್ಲಿಂಗ್","ಸೈಬರ್ ಸ್ಟಾಕಿಂಗ್","ಪಾಸ್‌ವರ್ಡ್ ದಾಳಿಗಳು","ಮಾಲ್‌ವೇರ್ ದಾಳಿಗಳು","DDoS ದಾಳಿಗಳು","ವೆಬ್‌ಸೈಟ್ ಮೇಲೆ SQL ಇಂಜೆಕ್ಷನ್ ದಾಳಿಗಳು","ವೆಬ್‌ಸೈಟ್ ಡಿಫೇಸ್‌ಮೆಂಟ್","ಸಿಮ್-ಸ್ವಾಪ್ ವಂಚನೆ","ಕ್ರೆಡಿಟ್/ಡೆಬಿಟ್ ಕಾರ್ಡ್ ವಂಚನೆ","ಇಮೇಲ್ ಸ್ಪೂಫಿಂಗ್","ಸೋಶಿಯಲ್ ಇಂಜಿನಿಯರಿಂಗ್ ವಂಚನೆಗಳು","ಕ್ರಿಪ್ಟೋಕರೆನ್ಸಿ ವಂಚನೆ","ಡೇಟಾ ಸೋರಿಕೆ","ಆನ್‌ಲೈನ್ ಉದ್ಯೋಗ ವಂಚನೆಗಳು","ಸೆಕ್ಸ್‌ಟಾರ್ಷನ್ ಮತ್ತು ಆನ್‌ಲೈನ್ ಬ್ಲ್ಯಾಕ್‌ಮೇಲ್"],
+a:["ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ವರದಿ ಮಾಡಿ.","ಹಣ ಕಳವಾಗಿದ್ದರೆ 1930ಗೆ ಕರೆ ಮಾಡಿ; ಇಲ್ಲದಿದ್ದರೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ವರದಿ ಮಾಡಿ.","ತಕ್ಷಣ 1930ಗೆ ಕರೆ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಅಥವಾ ಪಾವತಿ ಸಂಸ್ಥೆಯನ್ನು ಸಂಪರ್ಕಿಸಿ.","ಹಣ ಕಳೆದುಹೋಗಿದ್ದರೆ ಅಥವಾ ವರ್ಗಾವಣೆಯಾಗಿದ್ದರೆ 1930ಗೆ ಕರೆ ಮಾಡಿ, ಆನ್‌ಲೈನ್‌ನಲ್ಲೂ ವರದಿ ಮಾಡಿ.","ಹಣ ಕಳವಾಗಿದ್ದರೆ 1930ಗೆ ಕರೆ ಮಾಡಿ ಮತ್ತು ತಕ್ಷಣ ನಿಮ್ಮ ಮೊಬೈಲ್ ಆಪರೇಟರ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿ.","ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ವರದಿ ಮಾಡಿ. ತುರ್ತು ಅಥವಾ ತಕ್ಷಣದ ಬೆದರಿಕೆ ಇದ್ದರೆ 112ಗೆ ಕರೆ ಮಾಡಿ.","ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಅಥವಾ ಸ್ಥಳೀಯ ಪೊಲೀಸರಿಗೆ ವರದಿ ಮಾಡಿ.","ಅನಧಿಕೃತ ಪ್ರವೇಶ ಅಥವಾ ಅದರಿಂದ ಆದ ವಂಚನೆಯನ್ನು ವರದಿ ಮಾಡಿ.","ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಅಥವಾ ಪೊಲೀಸರಿಗೆ ವರದಿ ಮಾಡಿ. ತಾಂತ್ರಿಕ ಘಟನೆಗಳಲ್ಲಿ CERT-In ಸಹಾಯ ಮಾಡಬಹುದು.","ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ವರದಿ ಮಾಡಿ. ಸೈಟ್ ಮಾಲೀಕರು ತಮ್ಮ ಹೋಸ್ಟಿಂಗ್ ಪೂರೈಕೆದಾರರಿಗೂ ತಿಳಿಸಬೇಕು."]}
+};
+var lang="en",f="all",q="";
+try{var s=localStorage.getItem("lang");if(s&&L[s])lang=s;}catch(e){}
+function render(){
+ var t=L[lang],out="",n=0;
+ D.forEach(function(d,i){
+  var nm=t.n[i];
+  if((f!=="all"&&d[0]!==f)||(q&&nm.toLowerCase().indexOf(q)<0))return;
+  n++;
+  var b='<a class="btn" href="'+P+'" target="_blank" rel="noopener noreferrer">'+t.rp+'</a>';
+  if(PH[d[1]])b+='<a class="btn alt" href="tel:'+PH[d[1]]+'" target="_blank" rel="noopener">'+t.cl+' '+PH[d[1]]+'</a>';
+  if(d[1]===8)b+='<a class="btn alt" href="https://www.cert-in.org.in/" target="_blank" rel="noopener noreferrer">CERT-In</a>';
+  out+='<div class="card"><div class="num">'+(i+1)+'</div><h3>'+nm+'</h3><p class="mute">'+t.a[d[1]]+'</p>'+b+'</div>';
+ });
+ document.getElementById("list").innerHTML=out||'<p class="mute">'+t.no+'</p>';
+ document.getElementById("count").textContent=t.sh.replace("{n}",n);
+}
+function apply(){
+ var t=L[lang];
+ document.documentElement.lang=lang;
+ document.getElementById("lang").value=lang;
+ Array.prototype.forEach.call(document.querySelectorAll("[data-k]"),function(e){e.textContent=t[e.dataset.k];});
+ Array.prototype.forEach.call(document.querySelectorAll(".cl"),function(e){e.textContent=t.cl;});
+ document.getElementById("q").placeholder=t.ph;
+ render();
+}
+document.getElementById("lang").addEventListener("change",function(e){lang=e.target.value;try{localStorage.setItem("lang",lang);}catch(x){}apply();});
+document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();render();});
+document.getElementById("chips").addEventListener("click",function(e){
+ if(!e.target.dataset.f)return;
+ f=e.target.dataset.f;
+ Array.prototype.forEach.call(this.children,function(c){c.classList.toggle("on",c===e.target);});
+ render();
+});
+apply();
+</script>
+</body>
+</html>
